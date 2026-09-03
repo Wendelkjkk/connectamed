@@ -571,7 +571,7 @@ function SolicitarAtestado() {
                             className="bg-white/5 border-white/10" onChange={handleChange} 
                           />
                         </div>
-                        <div className="space-y-2 md:col-span-2">
+                        <div className="space-y-2">
                           <Label htmlFor="whatsapp" className="flex items-center gap-2"><Phone className="w-4 h-4" /> WhatsApp</Label>
                           <Input 
                             id="whatsapp" name="whatsapp" value={formData.whatsapp} placeholder="(00) 00000-0000" required maxLength={15}
