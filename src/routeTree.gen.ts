@@ -10,33 +10,111 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminkRouteRouteImport } from './routes/admink/route'
+import { Route as SolicitarRouteImport } from './routes/solicitar'
+import { Route as AdminkIndexRouteImport } from './routes/admink/index'
+import { Route as AdminkLoginRouteImport } from './routes/admink/login'
+import { Route as AdminkPedidosRouteImport } from './routes/admink/pedidos'
+import { Route as ApiPublicPushinpayWebhookRouteImport } from './routes/api/public/pushinpay-webhook'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminkRouteRoute = AdminkRouteRouteImport.update({
+  id: '/admink',
+  path: '/admink',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolicitarRoute = SolicitarRouteImport.update({
+  id: '/solicitar',
+  path: '/solicitar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminkIndexRoute = AdminkIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminkRouteRoute,
+} as any)
+const AdminkLoginRoute = AdminkLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AdminkRouteRoute,
+} as any)
+const AdminkPedidosRoute = AdminkPedidosRouteImport.update({
+  id: '/pedidos',
+  path: '/pedidos',
+  getParentRoute: () => AdminkRouteRoute,
+} as any)
+const ApiPublicPushinpayWebhookRoute =
+  ApiPublicPushinpayWebhookRouteImport.update({
+    id: '/api/public/pushinpay-webhook',
+    path: '/api/public/pushinpay-webhook',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admink': typeof AdminkRouteRouteWithChildren
+  '/solicitar': typeof SolicitarRoute
+  '/admink/login': typeof AdminkLoginRoute
+  '/admink/pedidos': typeof AdminkPedidosRoute
+  '/admink/': typeof AdminkIndexRoute
+  '/api/public/pushinpay-webhook': typeof ApiPublicPushinpayWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/solicitar': typeof SolicitarRoute
+  '/admink/login': typeof AdminkLoginRoute
+  '/admink/pedidos': typeof AdminkPedidosRoute
+  '/admink': typeof AdminkIndexRoute
+  '/api/public/pushinpay-webhook': typeof ApiPublicPushinpayWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admink': typeof AdminkRouteRouteWithChildren
+  '/solicitar': typeof SolicitarRoute
+  '/admink/login': typeof AdminkLoginRoute
+  '/admink/pedidos': typeof AdminkPedidosRoute
+  '/admink/': typeof AdminkIndexRoute
+  '/api/public/pushinpay-webhook': typeof ApiPublicPushinpayWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admink'
+    | '/solicitar'
+    | '/admink/login'
+    | '/admink/pedidos'
+    | '/admink/'
+    | '/api/public/pushinpay-webhook'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/solicitar'
+    | '/admink/login'
+    | '/admink/pedidos'
+    | '/admink'
+    | '/api/public/pushinpay-webhook'
+  id:
+    | '__root__'
+    | '/'
+    | '/admink'
+    | '/solicitar'
+    | '/admink/login'
+    | '/admink/pedidos'
+    | '/admink/'
+    | '/api/public/pushinpay-webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminkRouteRoute: typeof AdminkRouteRouteWithChildren
+  SolicitarRoute: typeof SolicitarRoute
+  ApiPublicPushinpayWebhookRoute: typeof ApiPublicPushinpayWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +126,72 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admink': {
+      id: '/admink'
+      path: '/admink'
+      fullPath: '/admink'
+      preLoaderRoute: typeof AdminkRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solicitar': {
+      id: '/solicitar'
+      path: '/solicitar'
+      fullPath: '/solicitar'
+      preLoaderRoute: typeof SolicitarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admink/': {
+      id: '/admink/'
+      path: '/'
+      fullPath: '/admink/'
+      preLoaderRoute: typeof AdminkIndexRouteImport
+      parentRoute: typeof AdminkRouteRoute
+    }
+    '/admink/login': {
+      id: '/admink/login'
+      path: '/login'
+      fullPath: '/admink/login'
+      preLoaderRoute: typeof AdminkLoginRouteImport
+      parentRoute: typeof AdminkRouteRoute
+    }
+    '/admink/pedidos': {
+      id: '/admink/pedidos'
+      path: '/pedidos'
+      fullPath: '/admink/pedidos'
+      preLoaderRoute: typeof AdminkPedidosRouteImport
+      parentRoute: typeof AdminkRouteRoute
+    }
+    '/api/public/pushinpay-webhook': {
+      id: '/api/public/pushinpay-webhook'
+      path: '/api/public/pushinpay-webhook'
+      fullPath: '/api/public/pushinpay-webhook'
+      preLoaderRoute: typeof ApiPublicPushinpayWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AdminkRouteRouteChildren {
+  AdminkLoginRoute: typeof AdminkLoginRoute
+  AdminkPedidosRoute: typeof AdminkPedidosRoute
+  AdminkIndexRoute: typeof AdminkIndexRoute
+}
+
+const AdminkRouteRouteChildren: AdminkRouteRouteChildren = {
+  AdminkLoginRoute: AdminkLoginRoute,
+  AdminkPedidosRoute: AdminkPedidosRoute,
+  AdminkIndexRoute: AdminkIndexRoute,
+}
+
+const AdminkRouteRouteWithChildren = AdminkRouteRoute._addFileChildren(
+  AdminkRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminkRouteRoute: AdminkRouteRouteWithChildren,
+  SolicitarRoute: SolicitarRoute,
+  ApiPublicPushinpayWebhookRoute: ApiPublicPushinpayWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

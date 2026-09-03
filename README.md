@@ -1,12 +1,14 @@
-# Simply Connect
+# Project Nova
 
-oi
+Projeto 19/08/2026, 02:28:59
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://atestadoonlinek.lovable.app
+
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/1275b249-f675-462f-824c-7adb0329058a).
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/857dd79e-ce76-452f-84e7-a748e7b391cc).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
