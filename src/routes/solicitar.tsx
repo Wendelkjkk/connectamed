@@ -798,10 +798,9 @@ function SolicitarAtestado() {
                             <img 
                               src={certificatePreviewAsset.url} 
                               alt="Prévia do Atestado" 
-                              className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                              className="w-full h-auto object-cover pointer-events-none"
                               draggable={false}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 pointer-events-none" />
                           </div>
                           <p className="text-[10px] font-medium text-primary bg-primary/10 border border-primary/20 rounded-md py-3 px-4 text-center mt-2 shadow-sm leading-relaxed">
                             ✅ Seu atestado será emitido no modelo digital UPA com QR Code válido e assinatura digital do médico, contendo todas as suas informações pessoais e os dados da unidade UPA da sua cidade. A UPA possui unidades em todo o Brasil, garantindo autenticidade e aceitação nacional.
