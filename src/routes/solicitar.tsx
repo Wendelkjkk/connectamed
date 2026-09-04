@@ -801,11 +801,6 @@ function SolicitarAtestado() {
                               className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                               draggable={false}
                             />
-                            <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
-                              <div className="text-white/10 font-bold text-4xl -rotate-45 whitespace-nowrap select-none uppercase tracking-[0.5em]">
-                                CONECTAMED CONECTAMED CONECTAMED CONECTAMED
-                              </div>
-                            </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 pointer-events-none" />
                           </div>
                           <p className="text-[10px] font-medium text-primary bg-primary/10 border border-primary/20 rounded-md py-3 px-4 text-center mt-2 shadow-sm leading-relaxed">
