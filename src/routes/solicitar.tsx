@@ -791,15 +791,11 @@ function SolicitarAtestado() {
                           <Label className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary">
                             <FileSearch className="w-4 h-4" /> Modelo Digital com QR Code Válido
                           </Label>
-                          <div 
-                            className="relative rounded-xl overflow-hidden border border-white/10 group select-none"
-                            onContextMenu={(e) => e.preventDefault()}
-                          >
+                          <div className="rounded-xl overflow-hidden bg-white">
                             <img 
                               src={certificatePreviewAsset.url} 
                               alt="Prévia do Atestado" 
-                              className="w-full h-auto object-cover pointer-events-none"
-                              draggable={false}
+                              className="w-full h-auto"
                             />
                           </div>
                           <p className="text-[10px] font-medium text-primary bg-primary/10 border border-primary/20 rounded-md py-3 px-4 text-center mt-2 shadow-sm leading-relaxed">
