@@ -8,7 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Send, User, Calendar, Mail, Phone, Clock, CreditCard, Stethoscope, MapPin, Search, Copy, CheckCircle2, Loader2, QrCode, FileSearch, AlertCircle, XCircle } from "lucide-react";
 import * as React from "react";
-import certificatePreviewAsset from "@/assets/final_5_page-0001.jpg.asset.json";
+import certificatePreviewAsset from "@/assets/atestado-previa.jpg.asset.json";
 import { createPixPayment, getPaymentStatus } from "@/lib/payments.functions";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
